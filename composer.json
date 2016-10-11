@@ -2,6 +2,7 @@
     "name": "cybtow/event-manager",
     "description": "Event Manager System",
     "type": "library",
+    "license": "MIT",
     "keywords": ["event"],
     "authors": [
         {
