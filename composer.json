@@ -1,0 +1,20 @@
+{
+    "name": "cybtow/event-manager",
+    "description": "Event Manager System",
+    "type": "library",
+    "keywords": ["event"],
+    "authors": [
+        {
+            "name": "cybtow",
+            "homepage": "https://github.com/cybtow/event-manager"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cybtow\\EventManager\\": "src/"
+        }
+    }
+}

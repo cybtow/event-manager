@@ -1,0 +1,5 @@
+*.php~
+/nbproject/
+/vendor/
+/var/*
+/web/css/skin/
