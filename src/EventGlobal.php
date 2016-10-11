@@ -38,12 +38,12 @@ class EventGlobal {
     /**
      * run
      * 
-     * @param mixed $sender
+     * @param mixed $Sender
      * @param string $eventName
      * @param array $args
      */
-    public static function run($sender, $eventName, $args = null) {
-        EventInternal::run(self::$eventListeners, $sender, $eventName, $args);
+    public static function run($Sender, $eventName, $args = null) {
+        EventInternal::run(self::$eventListeners, $Sender, $eventName, $args);
     }
 
 }

@@ -58,21 +58,22 @@ class EventInternal {
      * run
      * 
      * @param \Closure[] $aClosures 
-     * @param mixed $sender
+     * @param mixed $Sender
      * @param string $eventName
      * @param array $args
      */
-    public static function run(array $aClosures, $sender, $eventName, $args = null) {
+    public static function run(array $aClosures, $Sender, $eventName, $args = null) {
         $key = "_event_$eventName";
         if (isset($aClosures[$key])) {
             foreach ($aClosures[$key] as $callback) {
                 if (is_callable($callback['f'])) {
-                    if (!is_array($args)) {
-                        $argumento = array_merge(array('result' => $args), $callback['a']);
-                    } else {
-                        $argumento = array_merge($args, $callback['a']);
-                    }
-                    call_user_func($callback['f'], $sender, $eventName, $argumento);
+                    $Event = new EventInstance();
+                    $Event->setSender($Sender);
+                    $Event->setEventName($eventName);
+                    $Event->setArgsIn($callback['a']);
+                    $Event->setArgsResult($args);
+
+                    call_user_func($callback['f'], $Event);
                 }
             }
         }
